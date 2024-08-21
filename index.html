@@ -56,6 +56,7 @@ const handleRedirectAndGetEmail = async () => {
     // Check if this is a callback from Auth0
     if (query.includes("code=") && query.includes("state=")) {
       try {
+        console.log("test1")
         // Handle the redirect callback and extract user information
         await auth0Client.handleRedirectCallback();
         const user = await auth0Client.getUser();
@@ -67,6 +68,7 @@ const handleRedirectAndGetEmail = async () => {
         console.error("Error handling redirect:", err);
       }
     } else {
+        console.log("test2")
       // Check if the user is already authenticated
       const isAuthenticated = await auth0Client.isAuthenticated();
 
