@@ -37,7 +37,7 @@ const login = async () => {
 
     await auth0Client.loginWithRedirect({
       authorizationParams: {
-        redirect_uri: window.location.origin,
+        redirect_uri: "https://benjaminas1.github.io/email_take",
         scope: 'openid profile email',
       },
     });
